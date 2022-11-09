@@ -8,6 +8,7 @@ function Layout({title, children}) {
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <link rel="stylesheet" href="/styles/bootstrap.min.css"></link>
+            <link rel="stylesheet" href="/styles/style.css"></link>
             <title>{title}</title>
         </head>
         <body>

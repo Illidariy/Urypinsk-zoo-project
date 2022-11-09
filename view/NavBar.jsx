@@ -1,15 +1,27 @@
 const React = require('react')
 
-module.exports = function NavBar () {
+module.exports = function NavBar ({user}) {
 return(
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/">Zoo</a>
-      <a class="nav-item nav-link active" href="/animals">Animals</a>
-      <a class="nav-item nav-link active" href="/tariffs">Tariffs</a>
+  (!user ? 
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div className="navbar-nav">
+      <a className="nav-item nav-link active" href="/">Zoo</a>
+      <a className="nav-item nav-link active" href="/animals">Animals</a>
+      <a className="nav-item nav-link active" href="/tariffs">Tariffs</a>
     </div>
   </div>
-</nav>
+</nav> :
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div className="navbar-nav">
+      <a className="nav-item nav-link active" href="/">Zoo</a>
+      <a className="nav-item nav-link active" href="/animals">Animals</a>
+      <a className="nav-item nav-link active" href="/tariffs">Tariffs</a>
+      <a className="nav-item nav-link active" href="/logout">Logout</a>
+    </div>
+  </div>
+</nav> 
+  )
 )
 }

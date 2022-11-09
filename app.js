@@ -1,11 +1,18 @@
 require('@babel/register');
 const express = require('express');
-const ssr = require('./middleware/ssr');
+
+const configApp = require('./config/serverConfig');
+
+// Import Routes
 
 const app = express();
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(ssr);
-app.use(express.static('public'));
 
-app.listen(3000);
+const PORT = process.env.PORT || 3000;
+
+configApp(app);
+
+// app.use Routes
+
+app.listen(PORT, () => {
+  console.log('Server is working');
+});

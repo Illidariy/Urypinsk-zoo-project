@@ -1,4 +1,5 @@
-const React = require('react');
+const React = require("react");
+
 
 function Layout({title, children}) {
     return(
@@ -17,6 +18,7 @@ function Layout({title, children}) {
         </body>
         </html>
     )
+
 }
 
 module.exports = Layout;

@@ -5,9 +5,11 @@ const Layout = require("./Layout.jsx");
 module.exports = function AllAnimalsPage({ animals, title }) {
   return (
     <Layout title={title}>
-      {animals.map((animal) => (
-        <AnimalCard animal={animal} key={animal.id} />
-      ))}
+      <div class="card-group">
+        {animals.map((animal) => (
+          <AnimalCard animal={animal} key={animal.id} />
+        ))}
+      </div>
     </Layout>
   );
 };

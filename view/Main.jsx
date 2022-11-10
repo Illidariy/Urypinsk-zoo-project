@@ -5,7 +5,7 @@ const NavBar = require('./NavBar');
 module.exports = function Main ({user}) {
   return (
     <Layout>
-      <NavBar admin={user}/>
+      <NavBar user={user}/>
       <div className='lemurImg'>
         <h1>ДОБРО ПОЖАЛОВАТЬ В УРЮПИНСКИЙ ЗООПАРК</h1>
       </div>

@@ -10,7 +10,7 @@ module.exports = function Tariffs() {
         <form action="/tarrifs" className="tarrifs">
           <br></br>
           <h3>Тариф в будние</h3>
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">Для взрослых</th>
@@ -26,7 +26,7 @@ module.exports = function Tariffs() {
           </table>
           <br></br>
           <h3>Тариф в выходные</h3>
-          <table class="table">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">Для взрослых</th>

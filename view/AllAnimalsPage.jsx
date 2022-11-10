@@ -7,7 +7,7 @@ module.exports = function AllAnimalsPage({ animals, title }) {
   return (
     <Layout title={title}>
       <NavBar />
-      <div class="card-group">
+      <div className="card-group">
         {animals.map((animal) => (
           <AnimalCard animal={animal} key={animal.id} />
         ))}

@@ -6,7 +6,7 @@ module.exports = function Loga() {
   return (
     <Layout>
       <NavBar />
-      <div className='conteiner m-3'>
+      <div className='conteiner logBlock'>
         <form className='adminForm' action='/admin' method='post'>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Log in</label>

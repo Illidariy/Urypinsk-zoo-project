@@ -14,7 +14,7 @@
 } */
 
 body {
-  background: url(https://images.wallpaperscraft.ru/image/single/lemur_vzgliad_zabavnyj_180391_3840x2400.jpg) no-repeat;
+  background: url(/images/lemur4K.jpeg) no-repeat;
   background-size: 100%;
   background-position: center;
   /* background-repeat: repeat-y; */
@@ -30,4 +30,13 @@ h1 {
 
 .tariffBlock {
   background-color: rgba(255, 255, 255, 0.389);
+}
+
+.logBlock {
+  background-color: rgba(255, 255, 255, 0.389);
+  width: 500px;
+  height: 250px;
+  margin: 300px auto;
+  padding: 15px;
+  border-radius: 15px;
 }

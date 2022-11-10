@@ -3,10 +3,10 @@ const AnimalCard = require("./AnimalCard.jsx");
 const Layout = require("./Layout.jsx");
 const NavBar = require("./NavBar");
 
-module.exports = function AllAnimalsPage({ animals, title }) {
+module.exports = function AllAnimalsPage({ animals, title, user }) {
   return (
     <Layout title={title}>
-      <NavBar />
+      <NavBar user={user} />
       <div className="card-group">
         {animals.map((animal) => (
           <AnimalCard animal={animal} key={animal.id} />

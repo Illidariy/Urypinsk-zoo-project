@@ -6,12 +6,12 @@
   background-color: rgba(255, 255, 255, 0.389);
 }
 
-.card-group {
+/* .card-group {
     width: 250px;
     height: 500px;
     border: solid black;
 
-}
+} */
 
 body {
   background: url(https://images.wallpaperscraft.ru/image/single/lemur_zhivotnoe_vzgliad_177471_1920x1080.jpg) no-repeat;
@@ -23,4 +23,8 @@ h1 {
   color: white;
   font-size: 100px;
 
+}
+
+.tariffBlock {
+  background-color: rgba(255, 255, 255, 0.389);
 }

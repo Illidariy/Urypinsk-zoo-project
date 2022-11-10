@@ -7,7 +7,7 @@ const { Photo } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const { user } = res.locals;
-  const animals = await Animal.findAll({ order: [['id']], raw: true });
+  const animals = await Animal.findAll({ order: [['id', 'DESC']], raw: true });
   res.renderComponent(AllAnimalsPage, { animals, title: 'Zoo', user });
 });
 
@@ -19,7 +19,7 @@ router.delete('/:animalId', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const galery = await Photo.findAll({ where: { animalId: id }, row: true });
+  const galery = await Photo.findAll({ where: { animalId: id }, raw: true });
   // console.log(galery);
   res.renderComponent(AnimalPage, { galery, title: 'Zoo' });
 });
@@ -30,6 +30,12 @@ router.put('/:animalId', async (req, res) => {
   await Animal.update({ name, describe }, { where: { id: animalId } });
   const updatedAnimalCard = await Animal.findOne({ where: { id: animalId } });
   res.json({ name: updatedAnimalCard.name, describe: updatedAnimalCard.describe });
+});
+
+router.post('/', async (req, res) => {
+  const { name, describe } = req.body;
+  const newAnimal = await Animal.create({ name, describe });
+  res.json(newAnimal);
 });
 
 module.exports = router;

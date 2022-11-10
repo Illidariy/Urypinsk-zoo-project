@@ -2,15 +2,16 @@
   width: 350px;
   height: 600px;
   border: solid black;
+  background-color: rgba(255, 255, 255, 0.389);
 }
 
 .card-group {
-  background: #fff;
+  /* background: #fff; */
 }
 
 body {
   background: url(https://images.wallpaperscraft.ru/image/single/lemur_zhivotnoe_vzgliad_177471_1920x1080.jpg) no-repeat;
-  background-size: 100%;
+  background-size: 100%
 }
 
 h1 {

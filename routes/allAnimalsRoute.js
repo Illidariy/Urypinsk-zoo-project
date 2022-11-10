@@ -6,8 +6,15 @@ const AnimalPage = require('../view/AnimalPage.jsx');
 const { Photo } = require('../db/models');
 
 router.get('/', async (req, res) => {
+  const { user } = res.locals;
   const animals = await Animal.findAll({ row: true });
-  res.renderComponent(AllAnimalsPage, { animals, title: 'Zoo' });
+  res.renderComponent(AllAnimalsPage, { animals, title: 'Zoo', user });
+});
+
+router.delete('/:animalId', async (req, res) => {
+  const { animalId } = req.params;
+  await Animal.destroy({ where: { id: animalId } });
+  res.status(204).end();
 });
 
 router.get('/:id', async (req, res) => {

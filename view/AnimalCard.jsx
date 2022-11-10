@@ -1,9 +1,11 @@
 const React = require("react");
+const Modal = require("./Modal");
 
-function AnimalCard({ animal }) {
+function AnimalCard({ animal, user }) {
   return (
-    <div className="cardAnimal m-3">
-      <img src={animal.uri} className="card-img-top non" alt={animal.name} />
+    <div data-id={animal.id} className="cardAnimal m-3">
+      <img src={animal.uri} className="card-img-top" alt={animal.name} />
+
       <div className="card-body">
         <h5 className="card-title">{animal.name}</h5>
         <p className="card-text">{animal.describe}</p>
@@ -12,6 +14,12 @@ function AnimalCard({ animal }) {
         <a href={`/animals/${animal.id}`} className="card-link">
           Галерея
         </a>
+        {user &&
+        <div>
+        <button type="button" className="btn btn-primary deleteCard">delete</button>
+        <button type="button" class="btn btn-primary editCard" data-toggle="modal" data-target="#exampleModalCenter">edit</button>
+        <Modal animal={animal}/>
+        </div>}
       </div>
     </div>
   );

@@ -11,6 +11,8 @@ function Layout({title, children}) {
             <link rel="stylesheet" href="/styles/bootstrap.min.css"></link>
             <link rel="stylesheet" href="/styles/style.css"></link>
             <script defer src='js/client.js'></script>
+            <script defer src='js/deleteCard.js'></script>
+            <script defer src='js/editCard.js'></script>
             <title>{title}</title>
         </head>
         <body>

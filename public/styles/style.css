@@ -4,14 +4,29 @@
   height: 600px;
   border: solid black;
   background-color: rgba(255, 255, 255, 0.389);
+  border-radius: 10px;
 }
 
-/* .card-group {
-    width: 250px;
-    height: 500px;
-    border: solid black;
+.galery {
+  width: 500px;
+  height: 600px;
+  border: solid black;
+  border-radius: 10px;
+}
 
-} */
+.non {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+
+.card-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 
 body {
   background: url(https://images.wallpaperscraft.ru/image/single/lemur_vzgliad_zabavnyj_180391_3840x2400.jpg) no-repeat;

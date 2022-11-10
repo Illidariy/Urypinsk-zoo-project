@@ -1,4 +1,5 @@
 const React = require("react");
+const Modal = require("./Modal");
 
 function AnimalCard({ animal, user }) {
   return (
@@ -15,6 +16,8 @@ function AnimalCard({ animal, user }) {
         {user &&
         <div>
         <button type="button" className="btn btn-primary deleteCard">delete</button>
+        <button type="button" class="btn btn-primary editCard" data-toggle="modal" data-target="#exampleModalCenter">edit</button>
+        <Modal animal={animal}/>
         </div>}
       </div>
     </div>

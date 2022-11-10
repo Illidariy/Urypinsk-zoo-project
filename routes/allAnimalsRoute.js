@@ -7,7 +7,7 @@ const { Photo } = require('../db/models');
 
 router.get('/', async (req, res) => {
   const { user } = res.locals;
-  const animals = await Animal.findAll({ row: true });
+  const animals = await Animal.findAll({ order: [['id']], raw: true });
   res.renderComponent(AllAnimalsPage, { animals, title: 'Zoo', user });
 });
 
@@ -22,6 +22,14 @@ router.get('/:id', async (req, res) => {
   const galery = await Photo.findAll({ where: { animalId: id }, row: true });
   // console.log(galery);
   res.renderComponent(AnimalPage, { galery, title: 'Zoo' });
+});
+
+router.put('/:animalId', async (req, res) => {
+  const { animalId } = req.params;
+  const { name, describe } = req.body;
+  await Animal.update({ name, describe }, { where: { id: animalId } });
+  const updatedAnimalCard = await Animal.findOne({ where: { id: animalId } });
+  res.json({ name: updatedAnimalCard.name, describe: updatedAnimalCard.describe });
 });
 
 module.exports = router;

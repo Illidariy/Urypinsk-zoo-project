@@ -7,8 +7,8 @@ function AnimalCard({ animal, user }) {
       <img src={animal.uri} className="card-img-top" alt={animal.name} />
 
       <div className="card-body">
-        <h5 className="card-title">{animal.name}</h5>
-        <p className="card-text">{animal.describe}</p>
+        <h5 className="card-title animalName">{animal.name}</h5>
+        <p className="card-text animalDescribe">{animal.describe}</p>
       </div>
       <div className="card-body">
         <a href={`/animals/${animal.id}`} className="card-link">

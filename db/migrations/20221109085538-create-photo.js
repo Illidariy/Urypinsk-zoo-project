@@ -14,6 +14,7 @@ module.exports = {
           model: 'Animals',
           key: 'id',
         },
+        onDelete: 'cascade',
       },
       uri: {
         type: Sequelize.TEXT,

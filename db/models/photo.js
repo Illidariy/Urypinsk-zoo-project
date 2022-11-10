@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Animal }) {
-      Photo.Animal = Photo.belongsTo(Animal, { foreignKey: 'animalId' });
+      Photo.Animal = Photo.belongsTo(Animal, { foreignKey: 'animalId', onDelete: 'cascade' });
     }
   }
   Photo.init({
@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         model: 'Animals',
         key: 'id',
       },
+      onDelete: 'cascade',
     },
     uri: DataTypes.TEXT,
   }, {

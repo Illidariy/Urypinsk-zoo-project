@@ -1,6 +1,6 @@
 const React = require('react');
-const NavBar = require('./NavBar');
 const Layout = require('./Layout')
+const NavBar = require('./NavBar');
 
 module.exports = function Main ({user}) {
   return (

@@ -1,17 +1,7 @@
 require('@babel/register');
 const express = require('express');
 
-
-
-
-
-
-
-
-
-
 const app = express();
-
 
 const configApp = require('./config/serverConfig');
 
@@ -21,10 +11,6 @@ const logRouter = require('./routes/logRoute');
 const logOutRouter = require('./routes/logOutRoute');
 const tariffRout = require('./routes/tariffRout');
 const allAnimalsRoute = require('./routes/allAnimalsRoute');
-
-
-const app = express();
-
 
 const PORT = process.env.PORT || 3000;
 

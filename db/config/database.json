@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "cksi",
-    "password": "111",
+    "username": "postgres",
+    "password": "postgres",
     "database": "zoo",
     "host": "127.0.0.1",
     "dialect": "postgres"

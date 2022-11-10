@@ -4,7 +4,8 @@ const loga = require('../view/Loga.jsx');
 const { Admin } = require('../db/models');
 
 router.get('/', (req, res) => {
-  res.renderComponent(loga);
+  const { user } = res.locals;
+  res.renderComponent(loga, { user });
 });
 
 router.post('/', async (req, res) => {
@@ -23,7 +24,7 @@ router.post('/', async (req, res) => {
     res.json({ status: 'error', message: 'не правильный логин или пароль' });
     return;
   }
-  req.session.userId = admin.id;
+  req.session.user_id = admin.id;
   res.json({ status: 'success', url: '/' });
 });
 module.exports = router;

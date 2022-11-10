@@ -14,8 +14,11 @@
 } */
 
 body {
-  background: url(https://images.wallpaperscraft.ru/image/single/lemur_zhivotnoe_vzgliad_177471_1920x1080.jpg) no-repeat;
-  background-size: 100%
+  background: url(https://images.wallpaperscraft.ru/image/single/lemur_vzgliad_zabavnyj_180391_3840x2400.jpg) no-repeat;
+  background-size: 100%;
+  background-position: center;
+  /* background-repeat: repeat-y; */
+  background-attachment: fixed;
 }
 
 h1 {

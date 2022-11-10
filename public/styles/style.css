@@ -1,11 +1,16 @@
-
 .cardAnimal {
-    width: 250px;
-    height: 500px;
-    border: solid black;
+  width: 350px;
+  height: 600px;
+  border: solid black;
+}
+
+.card-group {
+  background: #fff;
+}
 
 body {
-  background-image: url(https://images.wallpaperscraft.ru/image/single/lemur_zhivotnoe_vzgliad_177471_1920x1080.jpg);
+  background: url(https://images.wallpaperscraft.ru/image/single/lemur_zhivotnoe_vzgliad_177471_1920x1080.jpg) no-repeat;
+  background-size: 100%;
 }
 
 h1 {

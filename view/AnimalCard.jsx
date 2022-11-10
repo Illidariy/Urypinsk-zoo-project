@@ -10,7 +10,7 @@ function AnimalCard({ animal }) {
       </div>
       <div className="card-body">
         <a href="#" class="card-link">
-          Card link
+          Галерея
         </a>
       </div>
     </div>

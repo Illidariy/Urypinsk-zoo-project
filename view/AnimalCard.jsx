@@ -9,8 +9,8 @@ function AnimalCard({ animal }) {
         <p className="card-text">{animal.describe}</p>
       </div>
       <div className="card-body">
-        <a href="#" className="card-link">
-          Card link
+        <a href="#" class="card-link">
+          Галерея
         </a>
       </div>
     </div>

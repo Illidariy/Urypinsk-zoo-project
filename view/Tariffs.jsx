@@ -22,19 +22,25 @@ module.exports = function Tariffs({ user, myTar }) {
               <tbody>
                 <tr>
                   <td>
-                  <form id={arr[2].id} method="put">
-                  <span className="new">{arr[2].price}</span>
-                  <input name='price_adult' type="text" />
-                  <button type="submit">Изменить</button>
-                  </form>
+                  {!user && (<span className="new">{arr[2].price}</span>)}
+                  {user && (
+                                      <form id={arr[2].id} method="put">
+                                      <span className="new">{arr[2].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
                   </td>
                   
                     <td>
-                    <form id={arr[3].id} method="put">
-                    <span className="new">{arr[3].price}</span>
-                    <input name='price_adult' type="text" />
-                    <button type='submit'>Изменить</button>
-                    </form>
+                    {!user && (<span className="new">{arr[3].price}</span>)}
+                  {user && (
+                                      <form id={arr[3].id} method="put">
+                                      <span className="new">{arr[3].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
                     </td>
                   
                 </tr>
@@ -54,18 +60,24 @@ module.exports = function Tariffs({ user, myTar }) {
               <tbody>
                 <tr>
                   <td>
-                  <form id={arr[0].id} method="put">
-                    <span className="new">{arr[0].price}</span>
-                    <input name='price_adult' type="text" />
-                    <button type='submit'>Изменить</button>
-                    </form>
+                  {!user && (<span className="new">{arr[0].price}</span>)}
+                  {user && (
+                                      <form id={arr[0].id} method="put">
+                                      <span className="new">{arr[0].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
                     </td>
                   <td>
-                  <form id={arr[1].id} method="put">
-                    <span className="new">{arr[1].price}</span>
-                    <input name='price_adult' type="text" />
-                    <button type='submit'>Изменить</button>
-                    </form>
+                  {!user && (<span className="new">{arr[1].price}</span>)}
+                  {user && (
+                                      <form id={arr[1].id} method="put">
+                                      <span className="new">{arr[1].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
                   </td>
                 </tr>
               </tbody>

@@ -134,12 +134,14 @@ h1 {
   font-weight: bold;
 }
 
+
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
+
 
 /* .ourZoo {
   font-size: 30px;
@@ -156,3 +158,18 @@ h1 {
   padding: 15px;
   margin: 25px;
 } */
+
+.blockAdd {
+  background-color: rgba(255, 255, 255, 0.382);
+}
+
+.topCont {
+  position: relative;
+}
+.DeleteAnimal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  /* top: 10px */
+}
+

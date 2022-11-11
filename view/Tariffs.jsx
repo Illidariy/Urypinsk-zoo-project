@@ -2,12 +2,13 @@ const React = require("react");
 const Layout = require("./Layout");
 const NavBar = require("./NavBar");
 
-module.exports = function Tariffs({ user }) {
+module.exports = function Tariffs({ user, myTar }) {
+  const arr = [...myTar];
+  arr.sort((a,b)=> b.id - a.id)
   return (
     <Layout>
       <NavBar user={user} />
-      <div className="container ">
-        <form action="/tarrifs" className="tarrifs">
+      <div className="container js-tariffs">
           <br></br>
           <div className="tariffBlock">
             <h3>Тариф в будние</h3>
@@ -20,8 +21,28 @@ module.exports = function Tariffs({ user }) {
               </thead>
               <tbody>
                 <tr>
-                  <td>700</td>
-                  <td>500</td>
+                  <td>
+                  {!user && (<span className="new">{arr[2].price}</span>)}
+                  {user && (
+                                      <form id={arr[2].id} method="put">
+                                      <span className="new">{arr[2].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
+                  </td>
+                  
+                    <td>
+                    {!user && (<span className="new">{arr[3].price}</span>)}
+                  {user && (
+                                      <form id={arr[3].id} method="put">
+                                      <span className="new">{arr[3].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
+                    </td>
+                  
                 </tr>
               </tbody>
             </table>
@@ -38,13 +59,31 @@ module.exports = function Tariffs({ user }) {
               </thead>
               <tbody>
                 <tr>
-                  <td>1000</td>
-                  <td>700</td>
+                  <td>
+                  {!user && (<span className="new">{arr[0].price}</span>)}
+                  {user && (
+                                      <form id={arr[0].id} method="put">
+                                      <span className="new">{arr[0].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
+                    </td>
+                  <td>
+                  {!user && (<span className="new">{arr[1].price}</span>)}
+                  {user && (
+                                      <form id={arr[1].id} method="put">
+                                      <span className="new">{arr[1].price}</span>
+                                      <input name='price_adult' type="text" />
+                                      <button type="submit">Изменить</button>
+                                      </form>
+                  )}
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </form>
+      <script defer src='/js/editTariffs.js'></script>
       </div>
     </Layout>
   );

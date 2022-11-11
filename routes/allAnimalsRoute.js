@@ -22,16 +22,17 @@ router.delete('/:animalId', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const galery = await Photo.findAll({ where: { animalId: id }, raw: true });
-  res.renderComponent(AnimalPage, { galery, title: 'Zoo' });
+  const animalName = await Animal.findOne({ where: { id }, attributes: ['name', 'id'] });
+  const galery = await Photo.findAll({ where: { animalId: id }, order: [['id', 'DESC']], raw: true });
+  res.renderComponent(AnimalPage, { galery, title: 'Zoo', animalName });
 });
 
 router.put('/:animalId', async (req, res) => {
   const { animalId } = req.params;
-  const { name, describe } = req.body;
-  await Animal.update({ name, describe }, { where: { id: animalId } });
+  const { name, describe, uri } = req.body;
+  await Animal.update({ name, describe, uri }, { where: { id: animalId } });
   const updatedAnimalCard = await Animal.findOne({ where: { id: animalId } });
-  res.json({ name: updatedAnimalCard.name, describe: updatedAnimalCard.describe });
+  res.json({ name: updatedAnimalCard.name, describe: updatedAnimalCard.describe, uri: updatedAnimalCard.uri });
 });
 
 router.post('/test', async (req, res) => {
@@ -61,6 +62,44 @@ router.post('/', async (req, res) => {
 
   const newAnimal = await Animal.create({ name, describe, uri: pic });
   res.json(newAnimal);
+});
+
+router.post('/:id/arr', async (req, res) => {
+  const fileArray = req.files.homesImg;
+  const newArr = fileArray.map((ph) => {
+    const fileSize = ph.size;
+    const extension = path.extname(ph.name);
+    const allowedExtensions = /.png|.jpeg|.jpg|.gif|.webp/;
+    if (!allowedExtensions.test(extension)) {
+      return ('Unsupported extension !');
+    }
+    if (fileSize > 5000000) {
+      return ('File must be less than 5MB');
+    }
+    const { md5 } = ph;
+
+    const URL = `/upload/${md5}${extension}`;
+
+    ph.mv(`./public/${URL}`, (err) => {
+      if (err) { return res.status(500).send(err); }
+      return URL;
+    });
+    return URL;
+  });
+  res.json(newArr);
+});
+
+router.post('/:id/test', async (req, res) => {
+  const { pic } = req.body;
+  const { id } = req.params;
+  const newAnimal = await Photo.create({ animalId: id, uri: pic });
+  res.json(newAnimal);
+});
+
+router.delete('/:id/:photoId', async (req, res) => {
+  const { photoId } = req.params;
+  await Photo.destroy({ where: { id: photoId } });
+  res.status(204).end();
 });
 
 module.exports = router;

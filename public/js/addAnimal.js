@@ -51,7 +51,7 @@ addForm.addEventListener('submit', async (event) => {
       <p>Загрузите файл с картинкой</p>
       <input type="file" name="pic"  />
     <p>имя</p>
-  <input class="form-control" name='name' value=${data.name} type="text" />
+  <input class="form-control" name='name' type="text" value=${data.name} ></input>
   <p>описание</p>
   <textarea name='describe' type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">${data.describe}</textarea>
   <button className="btn btn-primary saveBtn" type='submit'>save</button>

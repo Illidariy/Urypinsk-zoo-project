@@ -3,7 +3,6 @@ const React = require('react');
 module.exports = function Modal({ animal }) {
   return (
     <div id="myModal" class="modal">
-    {/* <!-- Modal content --> */}
     <div class="modal-content">
       <span class="close">&times;</span>
       <form id='editForm' action={`animal/${animal.id}`} method='PUT'>
@@ -12,7 +11,6 @@ module.exports = function Modal({ animal }) {
       <button className="btn btn-primary saveBtn" type='submit'>save</button>
       </form>
     </div>
-  
   </div>
   )
 };

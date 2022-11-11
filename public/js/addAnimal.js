@@ -9,10 +9,10 @@ addForm.addEventListener('submit', async (event) => {
     body: JSON.stringify({ name: name.value, describe: describe.value }),
   });
   const data = await response.json();
+  console.log(data.describe, data.name);
   const cardConteiner = document.querySelector('.addForm');
-  const html = `<div> <div data-id=${data.id} class="cardAnimal m-3">
+  const html = `<div data-id=${data.id} class="cardAnimal m-3">
   <img src=${data.uri} class="card-img-top" alt=${data.name} />
-
   <div class="card-body">
     <h5 class="card-title animalName">${data.name}</h5>
     <p class="card-text animalDescribe">${data.describe}</p>
@@ -24,10 +24,18 @@ addForm.addEventListener('submit', async (event) => {
     <div>
     <button type="button" class="btn btn-primary deleteCard">delete</button>
     <button type="button" class="btn btn-primary editCard" data-toggle="modal" data-target="#exampleModalCenter">edit</button>
-    <Modal animal=${data}/>
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id='editForm' action=animal/${data.id} method='PUT'>
+      <input class="form-control" name='name' value=${data.name} type="text" />
+      <textarea name='describe' type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">${data.describe}</textarea>
+      <button class="btn btn-primary saveBtn" type='submit'>save</button>
+      </form>
     </div>
   </div>
-</div>
-<div/>`;
+    </div>
+  </div>
+</div>`;
   cardConteiner.insertAdjacentHTML('afterend', html);
 });

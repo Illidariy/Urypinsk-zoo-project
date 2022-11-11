@@ -13,7 +13,7 @@
 .main-title {
   background-color: rgba(0, 0, 0, 0.35);
   margin: 25px;
-  margin-top: 300px;
+  margin-top: 400px;
   padding: 15px;
   border-radius: 25px;
   border: 4px solid white;
@@ -54,6 +54,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-content: space-between;
+  justify-content: space-around;
+  justify-content: space-evenly;
 
 }
 

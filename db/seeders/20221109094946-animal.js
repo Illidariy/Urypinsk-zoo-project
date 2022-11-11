@@ -7,6 +7,9 @@ module.exports = {
       { name: 'Обыкновенная тупайя', uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Stavenn_Tupaia_glis_00.jpg/275px-Stavenn_Tupaia_glis_00.jpg', describe: 'Широко распространены в тропических лесах, в горах доходя до 3000 м над уровнем моря; встречаются также на плантациях и в садах. Часто держатся вблизи человеческого жилья. Тупайи напоминают белок не только внешним видом, но и повадками. Как и белки, это дневные животные, устраивающие убежища в дуплах упавших деревьев, под корнями, в полостях бамбука и т. п.' },
       { name: 'Очковый медведь', uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Urso_de_%C3%B3culos.jpg/275px-Urso_de_%C3%B3culos.jpg', describe: 'Очковый медведь (лат. Tremarctos ornatus), также называемый андским — хищное млекопитающее семейства медвежьих. Единственный выживший представитель подсемейства короткомордых медведей. ' },
       { name: 'Коала', uri: 'http://c.files.bbci.co.uk/11C76/production/_123222827_gettyimages-510169460.jpg', describe: 'Коáла (лат. Phascolarctos cinereus) — вид сумчатых, обитающий в Австралии. Единственный современный представитель семейства коаловых (Phascolarctidae) из отряда двурезцовых сумчатых (Diprotodontia).' },
+      { name: '', uri: '', describe: '' },
+      { name: '', uri: '', describe: '' },
+      { name: '', uri: '', describe: '' },
     ];
     const data = animal.map((el) => ({
       ...el,

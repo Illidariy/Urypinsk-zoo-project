@@ -4,17 +4,22 @@ addForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const { name, describe } = event.target;
   const picFile = await event.target.pic.files;
-  const newFile = new FormData();
-  const array = [...picFile];
-  array.forEach((el) => {
-    newFile.append('homesImg', el);
-  });
-  const responseWithPic = await fetch('/animals/test', {
-    method: 'POST',
-    body: newFile,
-  });
-  const dataWithPic = await responseWithPic.json();
-  // console.log(dataWithPic);
+  let dataWithPic;
+  if (picFile.length) {
+    const newFile = new FormData();
+    const array = [...picFile];
+    array.forEach((el) => {
+      newFile.append('homesImg', el);
+    });
+    const responseWithPic = await fetch('/animals/test', {
+      method: 'POST',
+      body: newFile,
+    });
+    dataWithPic = await responseWithPic.json();
+    console.log(dataWithPic);
+  } else {
+    dataWithPic = { path: '/images/lapka.jpeg' };
+  }
 
   const response = await fetch('/animals', {
     method: 'POST',
@@ -43,9 +48,13 @@ addForm.addEventListener('submit', async (event) => {
     <div class="modal-content">
       <span class="close">&times;</span>
       <form id='editForm' action=animal/${data.id} method='PUT'>
-      <input class="form-control" name='name' value=${data.name} type="text" />
-      <textarea name='describe' type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">${data.describe}</textarea>
-      <button class="btn btn-primary saveBtn" type='submit'>save</button>
+      <p>Загрузите файл с картинкой</p>
+      <input type="file" name="pic"  />
+    <p>имя</p>
+  <input class="form-control" name='name' value=${data.name} type="text" />
+  <p>описание</p>
+  <textarea name='describe' type="text" class="form-control" id="exampleFormControlTextarea1" rows="3">${data.describe}</textarea>
+  <button className="btn btn-primary saveBtn" type='submit'>save</button>
       </form>
     </div>
   </div>
@@ -53,4 +62,5 @@ addForm.addEventListener('submit', async (event) => {
   </div>
 </div>`;
   cardConteiner.insertAdjacentHTML('afterend', html);
+  addForm.reset();
 });

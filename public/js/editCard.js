@@ -15,13 +15,26 @@ cardConteiner.addEventListener('click', (eventt) => {
     editForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const { name, describe } = e.target;
+      const picFile = await e.target.pic.files;
+      const newFile = new FormData();
+      const array = [...picFile];
+      array.forEach((el) => {
+        newFile.append('homesImg', el);
+      });
+      const responseWithPic = await fetch('/animals/test', {
+        method: 'POST',
+        body: newFile,
+      });
+      const dataWithPic = await responseWithPic.json();
 
       const response = await fetch(`animals/${animalId}`, {
         method: 'PUT',
         headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify({ name: name.value, describe: describe.value }),
+        body: JSON.stringify({ name: name.value, describe: describe.value, uri: dataWithPic.path }),
       });
       const data = await response.json();
+      console.log(data.uri);
+      cardAnimal.querySelector('.card-img-top').src = data.uri;
       cardAnimal.querySelector('.animalName').innerHTML = data.name;
       cardAnimal.querySelector('.animalDescribe').innerHTML = data.describe;
     });

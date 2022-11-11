@@ -11,14 +11,16 @@
 }
 
 .main-title {
-  background-color: rgba(0, 0, 0, 0.35);
+  /* background-color: rgba(0, 0, 0, 0.35); */
   margin: 25px;
-  margin-top: 400px;
+  margin-top: 450px;
   padding: 15px;
-  border-radius: 25px;
-  border: 4px solid white;
-  /* width: auto; */
+  /* border-radius: 25px;
+  border: 4px solid white; */
+  color: white;
+  text-shadow: 2px 2px black, 4px 4px white, 6px 6px black, 8px 8px white, 10px 10px black, 12px 12px white, 14px 14px black, 16px 16px white, 18px 18px black, 20px 20px white, 22px 22px black, 24px 24px white, 26px 26px black;
 }
+
 
 .card-img-top {
   height: 250px;
@@ -72,7 +74,11 @@ h1 {
   color: white;
   font-size: 100px;
 
+  color: #f4f4f4;
+  text-shadow: -1px -1px white, 1px 1px gray, 2px 2px #7a7a7a, 3px 3px #757575, 4px 4px #707070, 5px 5px #6b6b6b, 6px 6px #666666, 7px 7px #616161, 8px 8px #5c5c5c, 9px 9px #575757, 10px 10px #525252, 11px 11px #4d4d4d, 18px 18px 30px rgba(0, 0, 0, .4), 18px 18px 10px rgba(0, 0, 0, .4);
 }
+
+
 
 .tariffBlock {
   background-color: rgba(255, 255, 255, 0.389);
@@ -134,3 +140,19 @@ h1 {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* .ourZoo {
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+  color: #fefefe;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgb(6, 6, 6);
+  text-rendering: geometricPrecision;
+  text-overflow: ellipsis;
+  border-radius: 25px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.35);
+  padding: 15px;
+  margin: 25px;
+} */

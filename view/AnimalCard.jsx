@@ -17,7 +17,7 @@ function AnimalCard({ animal, user }) {
         {user && (
           <div>
             <button type="button" className="btn btn-primary deleteCard">
-              delete
+              Удалить
             </button>
             <button
               type="button"
@@ -25,7 +25,7 @@ function AnimalCard({ animal, user }) {
               data-toggle="modal"
               data-target="#exampleModalCenter"
             >
-              edit
+              Изменить
             </button>
             <Modal animal={animal} />
           </div>

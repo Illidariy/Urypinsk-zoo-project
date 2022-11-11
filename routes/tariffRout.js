@@ -15,9 +15,18 @@ router.get('/', async (req, res) => {
     attributes: ['id', 'price'],
     raw: true,
   });
-  console.log(myTar);
 
-  res.renderComponent(Tariffs);
+  res.renderComponent(Tariffs, { myTar });
+});
+
+router.put('/:id', async (req, res) => {
+  const { newPrice } = req.body;
+  const myTar = await db.Tariff.findOne({ where: { id: req.params.id } });
+  console.log(myTar);
+  myTar.price = newPrice;
+  await myTar.save();
+  res.json({ price: newPrice });
+
 });
 
 module.exports = router;

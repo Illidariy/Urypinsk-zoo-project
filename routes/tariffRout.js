@@ -20,13 +20,16 @@ router.get('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
+  const { user } = res.locals;
+  if (!user) {
+    return res.sendStatus(403);
+  }
   const { newPrice } = req.body;
   const myTar = await db.Tariff.findOne({ where: { id: req.params.id } });
   console.log(myTar);
   myTar.price = newPrice;
   await myTar.save();
   res.json({ price: newPrice });
-
 });
 
 module.exports = router;

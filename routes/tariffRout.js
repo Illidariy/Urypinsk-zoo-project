@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Tariffs = require('../view/Tariffs');
+const Tariffs = require('../view/Tariffs.jsx');
 const db = require('../db/models');
 
 router.get('/', async (req, res) => {
@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
     raw: true,
   });
 
-
   res.renderComponent(Tariffs, { myTar });
 });
 
@@ -27,6 +26,7 @@ router.put('/:id', async (req, res) => {
   myTar.price = newPrice;
   await myTar.save();
   res.json({ price: newPrice });
+
 });
 
 module.exports = router;

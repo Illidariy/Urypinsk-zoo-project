@@ -13,6 +13,7 @@ function Layout({title, children}) {
             <script defer src='js/client.js'></script>
             <script defer src='js/deleteCard.js'></script>
             <script defer src='js/editCard.js'></script>
+            <script defer src='js/addAnimal.js'></script>
             <title>{title}</title>
         </head>
         <body>

@@ -128,6 +128,7 @@ h1 {
   font-weight: bold;
 }
 
+
 .close:hover,
 .close:focus {
   color: black;
@@ -137,4 +138,14 @@ h1 {
 
 .blockAdd {
   background-color: rgba(255, 255, 255, 0.382);
+}
+
+.topCont {
+  position: relative;
+}
+.DeleteAnimal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  /* top: 10px */
 }

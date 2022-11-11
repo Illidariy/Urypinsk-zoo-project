@@ -14,6 +14,7 @@ function AnimalCard({ animal, user }) {
         <a href={`/animals/${animal.id}`} className="card-link">
           Галерея
         </a>
+
         {user && (
           <div>
             <button type="button" className="btn btn-primary deleteCard">
@@ -30,6 +31,7 @@ function AnimalCard({ animal, user }) {
             <Modal animal={animal} />
           </div>
         )}
+
       </div>
     </div>
   );

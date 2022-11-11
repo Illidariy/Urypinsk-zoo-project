@@ -2,6 +2,8 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const upload = require('express-fileupload');
+
 const getUser = require('../middleware/getUser');
 const reactSSR = require('../middleware/ssr');
 
@@ -13,6 +15,7 @@ module.exports = function configApp(app) {
   app.use(express.json());
   app.use(cookieParser());
   app.use(express.static('public'));
+  app.use(upload());
   app.use(reactSSR);
   app.use(getUser);
 };

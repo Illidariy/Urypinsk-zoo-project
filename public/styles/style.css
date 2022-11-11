@@ -134,3 +134,7 @@ h1 {
   text-decoration: none;
   cursor: pointer;
 }
+
+.blockAdd {
+  background-color: rgba(255, 255, 255, 0.382);
+}

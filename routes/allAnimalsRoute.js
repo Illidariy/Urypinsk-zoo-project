@@ -96,4 +96,10 @@ router.post('/:id/test', async (req, res) => {
   res.json(newAnimal);
 });
 
+router.delete('/:id/:photoId', async (req, res) => {
+  const { photoId } = req.params;
+  await Photo.destroy({ where: { id: photoId } });
+  res.status(204).end();
+});
+
 module.exports = router;

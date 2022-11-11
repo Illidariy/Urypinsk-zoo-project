@@ -19,8 +19,9 @@ function AnimalPage({ galery, title, user, animalName }) {
         </div>}
         
         {galery.map((photo) => (
-          <div key={photo.id}>
+          <div className="topCont" data-set={photo.id} key={photo.id}>
             <img  className="galery" src={photo.uri} alt="..." />
+            {user && <img className="DeleteAnimal" src="/images/delete.png"></img>}
           </div>
         ))}
       </div>

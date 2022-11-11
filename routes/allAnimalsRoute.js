@@ -29,10 +29,10 @@ router.get('/:id', async (req, res) => {
 
 router.put('/:animalId', async (req, res) => {
   const { animalId } = req.params;
-  const { name, describe } = req.body;
-  await Animal.update({ name, describe }, { where: { id: animalId } });
+  const { name, describe, uri } = req.body;
+  await Animal.update({ name, describe, uri }, { where: { id: animalId } });
   const updatedAnimalCard = await Animal.findOne({ where: { id: animalId } });
-  res.json({ name: updatedAnimalCard.name, describe: updatedAnimalCard.describe });
+  res.json({ name: updatedAnimalCard.name, describe: updatedAnimalCard.describe, uri: updatedAnimalCard.uri });
 });
 
 router.post('/test', async (req, res) => {
